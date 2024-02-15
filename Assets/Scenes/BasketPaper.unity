@@ -190,7 +190,7 @@ MonoBehaviour:
   - {fileID: 1495209583}
   gameTime: 60
   timeText: {fileID: 902121181}
-  playerAmount: 1
+  playerAmount: 2
 --- !u!1 &82738803
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +224,7 @@ Transform:
   - {fileID: 671365982}
   - {fileID: 1366247723}
   - {fileID: 1352146870}
-  m_Father: {fileID: 111053546}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &93329347
 PrefabInstance:
@@ -366,7 +366,6 @@ Transform:
   - {fileID: 550124155}
   - {fileID: 1072795331}
   - {fileID: 813900429}
-  - {fileID: 82738804}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &159522031 stripped
@@ -3065,6 +3064,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7934099778103290904, guid: 3ce46c0dc778b1645ac8ed593ab4d6c6, type: 3}
+      propertyPath: alternateFade
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934099778103290904, guid: 3ce46c0dc778b1645ac8ed593ab4d6c6, type: 3}
       propertyPath: activateObjects
       value: 1
       objectReference: {fileID: 0}
@@ -4582,6 +4585,7 @@ MonoBehaviour:
   rotationSpeed: 75
   minRotationAngle: -45
   maxRotationAngle: 45
+  rotate: 0
 --- !u!4 &1495209584
 Transform:
   m_ObjectHideFlags: 0
@@ -4675,6 +4679,7 @@ MonoBehaviour:
   rotationSpeed: 75
   minRotationAngle: -45
   maxRotationAngle: 45
+  rotate: 0
 --- !u!1 &1570240589 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 550405274405268637, guid: 076edec5aaa16ab4f83c4439e185aaa8, type: 3}
@@ -5309,6 +5314,10 @@ PrefabInstance:
       propertyPath: hasToActivate
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2491513648941273477, guid: 53517101efc1c4045aaabcc54b667b87, type: 3}
+      propertyPath: gameObjectsToActivate.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2941046372387378509, guid: 53517101efc1c4045aaabcc54b667b87, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5566,6 +5575,7 @@ MonoBehaviour:
   rotationSpeed: 75
   minRotationAngle: -45
   maxRotationAngle: 45
+  rotate: 0
 --- !u!1001 &1961504499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5972,6 +5982,7 @@ MonoBehaviour:
   rotationSpeed: 75
   minRotationAngle: -45
   maxRotationAngle: 45
+  rotate: 0
 --- !u!1001 &2135804436
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6478,6 +6489,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 705507995}
   - {fileID: 111053546}
+  - {fileID: 82738804}
   - {fileID: 818750363}
   - {fileID: 1181325679}
   - {fileID: 259182741}

@@ -11713,7 +11713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasToActivate: 0
-  gameObjectToActivate: {fileID: 0}
+  gameObjectsToActivate: []
 --- !u!1 &2098800951
 GameObject:
   m_ObjectHideFlags: 0
@@ -12415,6 +12415,10 @@ PrefabInstance:
     - target: {fileID: 7934099778103290904, guid: 3ce46c0dc778b1645ac8ed593ab4d6c6, type: 3}
       propertyPath: fadeDuration
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934099778103290904, guid: 3ce46c0dc778b1645ac8ed593ab4d6c6, type: 3}
+      propertyPath: alternateFade
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

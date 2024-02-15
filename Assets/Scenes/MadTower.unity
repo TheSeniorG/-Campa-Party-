@@ -1431,7 +1431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildPieces:
-  - {fileID: 8636922060618872123, guid: b7f63bfa9c20f5a4eaff8bfc9bd0fe6e, type: 3}
+  - {fileID: 8354236025763051468, guid: ad3a4238f8e964542930185dd4ec9208, type: 3}
   - {fileID: 6282619806895491095, guid: 76553b30604cf26498f4c795afd25991, type: 3}
   - {fileID: 7531959396516974830, guid: 37bd656e841883f4c91deb2804f0eaa2, type: 3}
   - {fileID: 8686217545968874010, guid: acb75c25890abce46936b5750c3f217a, type: 3}
@@ -1440,6 +1440,7 @@ MonoBehaviour:
   - {fileID: 3246115053561700561, guid: d6db9c954dbd411448e32ea6cc406ffd, type: 3}
   - {fileID: 5058334670389029794, guid: d9445afeaae4edd4194394a086e8497e, type: 3}
   - {fileID: 5058334670389029794, guid: 7393f86428591dd43917f82b0594e67e, type: 3}
+  - {fileID: 4316751964872658237, guid: 881ea7bcb871e294d9af444ac5eb166d, type: 3}
   spawnTime: 2
 --- !u!1 &259182738
 GameObject:
@@ -1578,7 +1579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildPieces:
-  - {fileID: 8636922060618872123, guid: b7f63bfa9c20f5a4eaff8bfc9bd0fe6e, type: 3}
+  - {fileID: 8354236025763051468, guid: ad3a4238f8e964542930185dd4ec9208, type: 3}
   - {fileID: 6282619806895491095, guid: 76553b30604cf26498f4c795afd25991, type: 3}
   - {fileID: 7531959396516974830, guid: 37bd656e841883f4c91deb2804f0eaa2, type: 3}
   - {fileID: 8686217545968874010, guid: acb75c25890abce46936b5750c3f217a, type: 3}
@@ -1587,6 +1588,7 @@ MonoBehaviour:
   - {fileID: 3246115053561700561, guid: d6db9c954dbd411448e32ea6cc406ffd, type: 3}
   - {fileID: 5058334670389029794, guid: d9445afeaae4edd4194394a086e8497e, type: 3}
   - {fileID: 5058334670389029794, guid: 7393f86428591dd43917f82b0594e67e, type: 3}
+  - {fileID: 4316751964872658237, guid: 881ea7bcb871e294d9af444ac5eb166d, type: 3}
   spawnTime: 2
 --- !u!114 &278439251
 MonoBehaviour:
@@ -7731,7 +7733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildPieces:
-  - {fileID: 8636922060618872123, guid: b7f63bfa9c20f5a4eaff8bfc9bd0fe6e, type: 3}
+  - {fileID: 8354236025763051468, guid: ad3a4238f8e964542930185dd4ec9208, type: 3}
   - {fileID: 6282619806895491095, guid: 76553b30604cf26498f4c795afd25991, type: 3}
   - {fileID: 7531959396516974830, guid: 37bd656e841883f4c91deb2804f0eaa2, type: 3}
   - {fileID: 8686217545968874010, guid: acb75c25890abce46936b5750c3f217a, type: 3}
@@ -7740,6 +7742,7 @@ MonoBehaviour:
   - {fileID: 3246115053561700561, guid: d6db9c954dbd411448e32ea6cc406ffd, type: 3}
   - {fileID: 5058334670389029794, guid: d9445afeaae4edd4194394a086e8497e, type: 3}
   - {fileID: 5058334670389029794, guid: 7393f86428591dd43917f82b0594e67e, type: 3}
+  - {fileID: 4316751964872658237, guid: 881ea7bcb871e294d9af444ac5eb166d, type: 3}
   spawnTime: 2
 --- !u!114 &1467655285
 MonoBehaviour:
@@ -8061,6 +8064,7 @@ MonoBehaviour:
   rotationSpeed: 75
   minRotationAngle: -45
   maxRotationAngle: 45
+  rotate: 0
 --- !u!4 &1495209584
 Transform:
   m_ObjectHideFlags: 0
@@ -8304,6 +8308,7 @@ MonoBehaviour:
   rotationSpeed: 75
   minRotationAngle: -45
   maxRotationAngle: 45
+  rotate: 0
 --- !u!1 &1527292566
 GameObject:
   m_ObjectHideFlags: 0
@@ -8442,7 +8447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildPieces:
-  - {fileID: 8636922060618872123, guid: b7f63bfa9c20f5a4eaff8bfc9bd0fe6e, type: 3}
+  - {fileID: 8354236025763051468, guid: ad3a4238f8e964542930185dd4ec9208, type: 3}
   - {fileID: 6282619806895491095, guid: 76553b30604cf26498f4c795afd25991, type: 3}
   - {fileID: 7531959396516974830, guid: 37bd656e841883f4c91deb2804f0eaa2, type: 3}
   - {fileID: 8686217545968874010, guid: acb75c25890abce46936b5750c3f217a, type: 3}
@@ -8451,6 +8456,7 @@ MonoBehaviour:
   - {fileID: 3246115053561700561, guid: d6db9c954dbd411448e32ea6cc406ffd, type: 3}
   - {fileID: 5058334670389029794, guid: d9445afeaae4edd4194394a086e8497e, type: 3}
   - {fileID: 5058334670389029794, guid: 7393f86428591dd43917f82b0594e67e, type: 3}
+  - {fileID: 4316751964872658237, guid: 881ea7bcb871e294d9af444ac5eb166d, type: 3}
   spawnTime: 2
 --- !u!1 &1570240589 stripped
 GameObject:
@@ -10239,6 +10245,7 @@ MonoBehaviour:
   rotationSpeed: 75
   minRotationAngle: -45
   maxRotationAngle: 45
+  rotate: 0
 --- !u!1001 &1961504499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10949,6 +10956,7 @@ MonoBehaviour:
   rotationSpeed: 75
   minRotationAngle: -45
   maxRotationAngle: 45
+  rotate: 0
 --- !u!1 &2094625933
 GameObject:
   m_ObjectHideFlags: 0

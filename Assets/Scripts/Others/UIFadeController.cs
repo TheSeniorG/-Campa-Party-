@@ -24,9 +24,13 @@ public class UIFadeController : MonoBehaviour
     void Awake(){image = GetComponent<Image>();}
     private void OnEnable()
     {
+        ForceFade();
+    }
+    public void ForceFade()
+    {
         //INICIAR FADE AL COMENZAR
-        if (fadeIn) { FadeIn(); image.color = new Color(image.color.r, image.color.g, image.color.b, 0f); }
-        else { FadeOut(); image.color = new Color(image.color.r, image.color.g, image.color.b, 1f); }
+        if (fadeIn) {image.color = new Color(image.color.r, image.color.g, image.color.b, 0f); FadeIn(); }
+        else {  image.color = new Color(image.color.r, image.color.g, image.color.b, 1f); FadeOut(); }
     }
     void FadeIn()
     {StartCoroutine(FadeTo(1.0f, fadeDuration));}
@@ -46,6 +50,7 @@ public class UIFadeController : MonoBehaviour
             image.color = new Color(currentColor.r, currentColor.g, currentColor.b, newAlpha);
             yield return null;
         }
+
         if (fadeIn)
         {
             //CUANDO HAGA FADE IN COMPRUEBA SI HA DE CAMBIAR ESCENAS

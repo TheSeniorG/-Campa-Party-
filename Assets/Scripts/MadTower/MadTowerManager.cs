@@ -5,19 +5,18 @@ using UnityEngine;
 public class MadTowerManager : MonoBehaviour
 {
     [SerializeField] private GameObject fade, winFlash;
-
     [SerializeField] private GameObject[] playersCards, playerArea;
     [SerializeField] private WinDetection[] winDetectors;
     [SerializeField] private PieceSpawner[] playerController;
     [SerializeField] private MoveBetweenPoints[] movBtwnPointsScript;
 
     private PlayerManager playerManager;
-
     [Header("TESTING ONLY")]
     [SerializeField][Range(1,4)] private int playerAmount = 1;
 
     private void Start()
     {
+
         //COMPROBAR QUE EXISTA PLAYER MANAGER
         if (GameObject.Find("PlayerManager"))
         {
@@ -46,6 +45,7 @@ public class MadTowerManager : MonoBehaviour
     public void EndGame()
     {
         //EFECTO DE FINALIZACION
+        winFlash.SetActive(false);
         winFlash.SetActive(true);
 
         playerAmount--;

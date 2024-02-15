@@ -51,19 +51,17 @@ public class BasketPaperManager : MonoBehaviour
                 card.SetPlayerColor(playerManager.GetPlayer(i).playerColor);
                 card.SetPlayerIcon(playerManager.GetPlayer(i).playerIcon);
             }
-
-            Invoke("SetGame", 12f);
         }
+        Invoke("SetGame", 12.5f);
     }
     private void SetGame()
     {
         //CAMBIAR ESTADO TIMER
         startTimer = !startTimer;
-
         //ACTIVAR SCRITS JUGADORES
         for (int i = 0; i < playerAmount; i++)
         {
-            launcherScripts[i].enabled = !launcherScripts[i].isActiveAndEnabled;
+            launcherScripts[i].enabled = !launcherScripts[i].enabled;
             rotatorScripts[i].ToogleRotation();
         }
     }
@@ -80,6 +78,9 @@ public class BasketPaperManager : MonoBehaviour
             }
             else
             {
+                //PARAMOS LA CUENTA
+
+                startTimer = false;
                 SetGame();
                 Invoke("EndScene", 3f);
             }
