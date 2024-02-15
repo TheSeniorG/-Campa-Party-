@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: -6959057187884029489, guid: 568fb900443f40d42ac883a269db969c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ea7ee5d698549b54caf10dd37ff13902, type: 2}
     - target: {fileID: 919132149155446097, guid: 568fb900443f40d42ac883a269db969c, type: 3}
       propertyPath: m_Name
       value: Tv_Monitor

@@ -80,10 +80,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5169578811043067064, guid: 3bd0355dc058cb846b6d3ca3be91a8bb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c25afb1e8fd45b34680d58e03395c1ee, type: 2}
     - target: {fileID: -3181452503744645242, guid: 3bd0355dc058cb846b6d3ca3be91a8bb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: -1937653688446003531, guid: 3bd0355dc058cb846b6d3ca3be91a8bb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8ff297c800ad164499722531326adf1e, type: 2}
     - target: {fileID: 919132149155446097, guid: 3bd0355dc058cb846b6d3ca3be91a8bb, type: 3}
       propertyPath: m_Name
       value: SmallTable
@@ -92,6 +100,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8151023354082563727, guid: 3bd0355dc058cb846b6d3ca3be91a8bb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c282f796602789044a23a8bbf7246c34, type: 2}
     - target: {fileID: 9152363913774390056, guid: 3bd0355dc058cb846b6d3ca3be91a8bb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647

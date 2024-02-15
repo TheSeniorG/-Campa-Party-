@@ -88,6 +88,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: -2859109400176981367, guid: d8d1ed817ca67c8418ccbc7494f2ed09, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ea7ee5d698549b54caf10dd37ff13902, type: 2}
     - target: {fileID: 919132149155446097, guid: d8d1ed817ca67c8418ccbc7494f2ed09, type: 3}
       propertyPath: m_Name
       value: EarthModel
@@ -100,6 +104,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 4923805526920725808, guid: d8d1ed817ca67c8418ccbc7494f2ed09, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ea7ee5d698549b54caf10dd37ff13902, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

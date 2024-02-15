@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4161954474705127488, guid: 06ff4e1c29071284b985c8abd29bf1ce, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b501f1529b496de47971fd7129e8a3d2, type: 2}
     - target: {fileID: -3872646420393079834, guid: 06ff4e1c29071284b985c8abd29bf1ce, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -96,6 +100,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 6346122587190628262, guid: 06ff4e1c29071284b985c8abd29bf1ce, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 15ab541457cf5c64391bb73d2c266748, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

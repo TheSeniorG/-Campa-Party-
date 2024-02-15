@@ -80,6 +80,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7273765587102819596, guid: 02b76568002458145bbdaf794b295be4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7aa6f4f6147e07e4688a4d0cb9a253e9, type: 2}
     - target: {fileID: 919132149155446097, guid: 02b76568002458145bbdaf794b295be4, type: 3}
       propertyPath: m_Name
       value: Book
@@ -88,6 +92,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 7054144470096349240, guid: 02b76568002458145bbdaf794b295be4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8eceeed74656f614890ddd786ab5b19e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
