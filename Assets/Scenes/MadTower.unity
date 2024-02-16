@@ -992,6 +992,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7934099778103290904, guid: 3ce46c0dc778b1645ac8ed593ab4d6c6, type: 3}
+      propertyPath: alternateFade
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7934099778103290904, guid: 3ce46c0dc778b1645ac8ed593ab4d6c6, type: 3}
       propertyPath: activateObjects
       value: 0
       objectReference: {fileID: 0}
@@ -1432,15 +1436,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildPieces:
   - {fileID: 8354236025763051468, guid: ad3a4238f8e964542930185dd4ec9208, type: 3}
-  - {fileID: 6282619806895491095, guid: 76553b30604cf26498f4c795afd25991, type: 3}
-  - {fileID: 7531959396516974830, guid: 37bd656e841883f4c91deb2804f0eaa2, type: 3}
-  - {fileID: 8686217545968874010, guid: acb75c25890abce46936b5750c3f217a, type: 3}
-  - {fileID: 5058334670389029794, guid: ec0dd82da196c2640a13d096e9bf8adf, type: 3}
-  - {fileID: 4937413412592052349, guid: 94141084346bde7418895f73bda8b04c, type: 3}
-  - {fileID: 3246115053561700561, guid: d6db9c954dbd411448e32ea6cc406ffd, type: 3}
-  - {fileID: 5058334670389029794, guid: d9445afeaae4edd4194394a086e8497e, type: 3}
-  - {fileID: 5058334670389029794, guid: 7393f86428591dd43917f82b0594e67e, type: 3}
   - {fileID: 4316751964872658237, guid: 881ea7bcb871e294d9af444ac5eb166d, type: 3}
+  - {fileID: 7376965751954510262, guid: 3194ed9e593aea641b4397aa6668bb1b, type: 3}
+  - {fileID: 7376965751954510262, guid: 06f969a14ba895a41be3185b04fc8f7e, type: 3}
+  - {fileID: 1224977778242673745, guid: 9530eadd8f4eb7b41bb77de383ab3974, type: 3}
+  - {fileID: 3556471810200698494, guid: 0300bd7659220b14daadb75a5ddc2910, type: 3}
+  - {fileID: 4549052179125990122, guid: 1a26cb688199c894fbf3db6d37b5fa88, type: 3}
+  - {fileID: 2387084277671927748, guid: 8a2258f26d7a015458937bc97ed5411b, type: 3}
+  - {fileID: 4330306688338528230, guid: 6b7d770bebe4d9742b8d37344342f5d4, type: 3}
   spawnTime: 2
 --- !u!1 &259182738
 GameObject:
@@ -1580,15 +1583,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildPieces:
   - {fileID: 8354236025763051468, guid: ad3a4238f8e964542930185dd4ec9208, type: 3}
-  - {fileID: 6282619806895491095, guid: 76553b30604cf26498f4c795afd25991, type: 3}
-  - {fileID: 7531959396516974830, guid: 37bd656e841883f4c91deb2804f0eaa2, type: 3}
-  - {fileID: 8686217545968874010, guid: acb75c25890abce46936b5750c3f217a, type: 3}
-  - {fileID: 5058334670389029794, guid: ec0dd82da196c2640a13d096e9bf8adf, type: 3}
-  - {fileID: 4937413412592052349, guid: 94141084346bde7418895f73bda8b04c, type: 3}
-  - {fileID: 3246115053561700561, guid: d6db9c954dbd411448e32ea6cc406ffd, type: 3}
-  - {fileID: 5058334670389029794, guid: d9445afeaae4edd4194394a086e8497e, type: 3}
-  - {fileID: 5058334670389029794, guid: 7393f86428591dd43917f82b0594e67e, type: 3}
   - {fileID: 4316751964872658237, guid: 881ea7bcb871e294d9af444ac5eb166d, type: 3}
+  - {fileID: 7376965751954510262, guid: 3194ed9e593aea641b4397aa6668bb1b, type: 3}
+  - {fileID: 7376965751954510262, guid: 06f969a14ba895a41be3185b04fc8f7e, type: 3}
+  - {fileID: 1224977778242673745, guid: 9530eadd8f4eb7b41bb77de383ab3974, type: 3}
+  - {fileID: 3556471810200698494, guid: 0300bd7659220b14daadb75a5ddc2910, type: 3}
+  - {fileID: 4549052179125990122, guid: 1a26cb688199c894fbf3db6d37b5fa88, type: 3}
+  - {fileID: 2387084277671927748, guid: 8a2258f26d7a015458937bc97ed5411b, type: 3}
+  - {fileID: 4330306688338528230, guid: 6b7d770bebe4d9742b8d37344342f5d4, type: 3}
   spawnTime: 2
 --- !u!114 &278439251
 MonoBehaviour:
@@ -1827,33 +1829,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 111053546}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &323634295 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7861092033998967570, guid: 505bef9b0421a7844809ed04f6afb494, type: 3}
-  m_PrefabInstance: {fileID: 9116735499190298401}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &323634299
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 323634295}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8733429697405204941, guid: 8a05c4076feb47a4e94a8cf59e3dc193, type: 3}
 --- !u!1 &324222808
 GameObject:
   m_ObjectHideFlags: 0
@@ -7734,15 +7709,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildPieces:
   - {fileID: 8354236025763051468, guid: ad3a4238f8e964542930185dd4ec9208, type: 3}
-  - {fileID: 6282619806895491095, guid: 76553b30604cf26498f4c795afd25991, type: 3}
-  - {fileID: 7531959396516974830, guid: 37bd656e841883f4c91deb2804f0eaa2, type: 3}
-  - {fileID: 8686217545968874010, guid: acb75c25890abce46936b5750c3f217a, type: 3}
-  - {fileID: 5058334670389029794, guid: ec0dd82da196c2640a13d096e9bf8adf, type: 3}
-  - {fileID: 4937413412592052349, guid: 94141084346bde7418895f73bda8b04c, type: 3}
-  - {fileID: 3246115053561700561, guid: d6db9c954dbd411448e32ea6cc406ffd, type: 3}
-  - {fileID: 5058334670389029794, guid: d9445afeaae4edd4194394a086e8497e, type: 3}
-  - {fileID: 5058334670389029794, guid: 7393f86428591dd43917f82b0594e67e, type: 3}
   - {fileID: 4316751964872658237, guid: 881ea7bcb871e294d9af444ac5eb166d, type: 3}
+  - {fileID: 7376965751954510262, guid: 3194ed9e593aea641b4397aa6668bb1b, type: 3}
+  - {fileID: 7376965751954510262, guid: 06f969a14ba895a41be3185b04fc8f7e, type: 3}
+  - {fileID: 1224977778242673745, guid: 9530eadd8f4eb7b41bb77de383ab3974, type: 3}
+  - {fileID: 3556471810200698494, guid: 0300bd7659220b14daadb75a5ddc2910, type: 3}
+  - {fileID: 4549052179125990122, guid: 1a26cb688199c894fbf3db6d37b5fa88, type: 3}
+  - {fileID: 2387084277671927748, guid: 8a2258f26d7a015458937bc97ed5411b, type: 3}
+  - {fileID: 4330306688338528230, guid: 6b7d770bebe4d9742b8d37344342f5d4, type: 3}
   spawnTime: 2
 --- !u!114 &1467655285
 MonoBehaviour:
@@ -8448,15 +8422,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildPieces:
   - {fileID: 8354236025763051468, guid: ad3a4238f8e964542930185dd4ec9208, type: 3}
-  - {fileID: 6282619806895491095, guid: 76553b30604cf26498f4c795afd25991, type: 3}
-  - {fileID: 7531959396516974830, guid: 37bd656e841883f4c91deb2804f0eaa2, type: 3}
-  - {fileID: 8686217545968874010, guid: acb75c25890abce46936b5750c3f217a, type: 3}
-  - {fileID: 5058334670389029794, guid: ec0dd82da196c2640a13d096e9bf8adf, type: 3}
-  - {fileID: 4937413412592052349, guid: 94141084346bde7418895f73bda8b04c, type: 3}
-  - {fileID: 3246115053561700561, guid: d6db9c954dbd411448e32ea6cc406ffd, type: 3}
-  - {fileID: 5058334670389029794, guid: d9445afeaae4edd4194394a086e8497e, type: 3}
-  - {fileID: 5058334670389029794, guid: 7393f86428591dd43917f82b0594e67e, type: 3}
   - {fileID: 4316751964872658237, guid: 881ea7bcb871e294d9af444ac5eb166d, type: 3}
+  - {fileID: 7376965751954510262, guid: 3194ed9e593aea641b4397aa6668bb1b, type: 3}
+  - {fileID: 7376965751954510262, guid: 06f969a14ba895a41be3185b04fc8f7e, type: 3}
+  - {fileID: 1224977778242673745, guid: 9530eadd8f4eb7b41bb77de383ab3974, type: 3}
+  - {fileID: 3556471810200698494, guid: 0300bd7659220b14daadb75a5ddc2910, type: 3}
+  - {fileID: 4549052179125990122, guid: 1a26cb688199c894fbf3db6d37b5fa88, type: 3}
+  - {fileID: 2387084277671927748, guid: 8a2258f26d7a015458937bc97ed5411b, type: 3}
+  - {fileID: 4330306688338528230, guid: 6b7d770bebe4d9742b8d37344342f5d4, type: 3}
   spawnTime: 2
 --- !u!1 &1570240589 stripped
 GameObject:
@@ -11604,9 +11577,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2924498813872215496, guid: 505bef9b0421a7844809ed04f6afb494, type: 3}
       insertIndex: -1
       addedObject: {fileID: 905061967}
-    - targetCorrespondingSourceObject: {fileID: 7861092033998967570, guid: 505bef9b0421a7844809ed04f6afb494, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 323634299}
   m_SourcePrefab: {fileID: 100100000, guid: 505bef9b0421a7844809ed04f6afb494, type: 3}
 --- !u!4 &9116735499190298402 stripped
 Transform:

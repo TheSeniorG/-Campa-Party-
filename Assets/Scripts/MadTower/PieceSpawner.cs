@@ -24,7 +24,6 @@ public class PieceSpawner : MonoBehaviour
 
         newPiece = Instantiate(buildPieces[nextPiece], transform.position, Quaternion.identity);
         newPiece.transform.SetParent(transform);
-        newPiece.GetComponent<Rigidbody>().isKinematic = true;
 
         canDrop = true;
     }

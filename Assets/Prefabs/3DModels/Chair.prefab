@@ -100,6 +100,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: -1895058403875074771, guid: d114890bc92850b4ea2e78cb0da867b1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d114890bc92850b4ea2e78cb0da867b1, type: 3}
       propertyPath: m_Name
       value: Chair
@@ -112,6 +116,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c282f796602789044a23a8bbf7246c34, type: 2}
+    - target: {fileID: 1576411590967185753, guid: d114890bc92850b4ea2e78cb0da867b1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8ff297c800ad164499722531326adf1e, type: 2}
+    - target: {fileID: 2754488994301486988, guid: d114890bc92850b4ea2e78cb0da867b1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062361514932817083, guid: d114890bc92850b4ea2e78cb0da867b1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8ff297c800ad164499722531326adf1e, type: 2}
     - target: {fileID: 5989381340754401283, guid: d114890bc92850b4ea2e78cb0da867b1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -128,6 +144,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8ff297c800ad164499722531326adf1e, type: 2}
+    - target: {fileID: 8418075476529611316, guid: d114890bc92850b4ea2e78cb0da867b1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8684955736958150373, guid: d114890bc92850b4ea2e78cb0da867b1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
