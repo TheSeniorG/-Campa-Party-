@@ -73,3 +73,10 @@ crashlytics-build.properties
 *.json
 *.json
 *.vsidx
+Library/ArtifactDB
+Library/SourceAssetDB
+Library/ShaderCache/EditorEncounteredVariants
+Library/Search/transactions.db
+Library/SceneVisibilityState.asset
+*.pid
+Library/ArtifactDB
