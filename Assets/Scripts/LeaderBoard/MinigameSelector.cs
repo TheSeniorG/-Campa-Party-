@@ -16,17 +16,18 @@ public class MinigameSelector : MonoBehaviour
     //MINIJUEGOS
     private Minigame chalkRace = new Minigame("Chalk Race", "Race through an infinite chalkboard with your chalk, skillfully dodging obstacles to score as high as possible in this thrilling and competitive experience!",0);
     private Minigame basketPaper = new Minigame("Basket Paper", "Aim, toss, and score in this minigame by landing your paper balls in strategically placed baskets while avoiding obstacles that may alter your trajectory.",1);
-    private Minigame expoQuiz = new Minigame("Expo-Quiz Adventure", "Dive into the world of knowledge and fun with an exciting trivia challenge set within a virtual expo where you put your perception to the test. The faster you answer correctly, the more points you accumulate, but beware of tricky twists and turns, some questions might have unexpected challenges!", 0);
+    private Minigame expoQuiz = new Minigame("Expo-Quiz Adventure", "Dive into the world of knowledge and fun with an exciting trivia challenge set within a virtual expo where you put your perception to the test.", 2);
+    private Minigame madTower = new Minigame("Mad Tower", "Dive into the world of knowledge and fun with an exciting trivia challenge set within a virtual expo where you put your perception to the test.", 3);
 
     //DECLARAMOS ARRAY PERO NO LO USAMOS AUN
     private Minigame[] minigames;
 
     void Start()
     {
-        Debug.Log("RECORDATORIO: FALTA IMPLEMENTAR LA CLASE DE LOS MINIJUEGOS CON SU INFO");
+        Debug.LogWarning("RECORDATORIO: FALTA IMPLEMENTAR LA CLASE DE LOS MINIJUEGOS CON SU INFO");
 
         //ASSIGANMOS LOS VALORES AL ARRAY
-        minigames = new Minigame[] {chalkRace,basketPaper,expoQuiz};
+        minigames = new Minigame[] {chalkRace,basketPaper,expoQuiz, madTower};
 
         startSpeed = Random.Range(50f, 200f);
         previousTick = currentTick + 1;

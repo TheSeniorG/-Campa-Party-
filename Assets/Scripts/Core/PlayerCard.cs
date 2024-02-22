@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class PlayerCard : MonoBehaviour
 {
-    private Color playerColor;
     [SerializeField] private Image playerBackground;
     [SerializeField] private Image playerIcon;
 

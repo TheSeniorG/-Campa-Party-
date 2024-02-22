@@ -1,21 +1,20 @@
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class ChalkRaceManager : MonoBehaviour
 {
-    // VARIABLES SERIALIZADAS
     [SerializeField] private ObstacleGenerator obstacleGenerator;
     [SerializeField] private ScrollMatOffset chalkboardMatSlider;
     [SerializeField] private GameObject fade;
     [SerializeField] private GameObject[] players, playersCards;
 
-    // VARIABLES PRIVADAS
     private PlayerChalk[] playerChalks;
     private int playersRemaining;
     private PlayerManager playerManager;
-
+    private Dictionary<int, int> playersScore;
     //SIEMPRE HAY 1 JUGADOR
     private int playerAmount = 1;
 
@@ -27,7 +26,7 @@ public class ChalkRaceManager : MonoBehaviour
             playerManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
 
             //OBTENEMOS LA LISTA DE JUGADORES
-            playerAmount = playerManager.GetListLength();
+            playerAmount = playerManager.GetPlayerAmount();
         }
         else { Debug.LogWarning("NO SE HA ENCONTRADO PLAYER MANAGER"); }
 
@@ -69,10 +68,9 @@ public class ChalkRaceManager : MonoBehaviour
         InvokeRepeating("IncreaseDifficulty", 12f, 5f);
     }
 
-    // MÉTODO DE AUMENTO DE DIFICULTAD
+    //AUMENTA EL SPAWN RATE DE OBSTACULOS
     private void IncreaseDifficulty(){if(obstacleGenerator != null)obstacleGenerator.IncreaseSpawnRate(0.25f);}
 
-    // CORRUTINA PARA GESTIONAR EL ESTADO DEL JUEGO
     public IEnumerator SetGame(float waitCall = 0f)
     {
         // ESPERA ANTES DE REALIZAR CAMBIOS
@@ -89,23 +87,40 @@ public class ChalkRaceManager : MonoBehaviour
 
         //HACER QUE LA PIZARRA SE DESPLACE
         chalkboardMatSlider.enabled = true;
-
     }
 
-    // MÉTODO DE ELIMINACIÓN DE JUGADORES
-    public void EliminatePlayer()
+    public void EliminatePlayer(int playerId, int score)
     {
         // DECREMENTA EL NÚMERO DE JUGADORES RESTANTES
         playersRemaining--;
 
+        //GUARDAR LA PUNTUACION HECHA POR EL JUGADOR
+        playersScore.Add(playerId, score);
+
+
         // SI NO HAY JUGADORES RESTANTES, DESACTIVA EL JUEGO
         if (playersRemaining == 0) 
         {
+            if(playerManager != null)
+            {
+                //ORDENAR PUNTUACIONES DEL JUGADOR
+                playersScore = playersScore.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+
+                for (int i = 0; i < playerAmount; i++)
+                {
+                    //ESTABLECER NUEVAS PUNTUACIONES
+                    playersScore[i] = playerAmount - i;
+                    //ACTUALIZARLAS EN EL PLAYER MANAGER
+                    int dictionaryKey = playersScore.ElementAt(i).Key;
+                    playerManager.IncreasePlayerScore(dictionaryKey,playerAmount-i);
+                }
+            }
+
+            //DESACTIVAR CONTROLES
             StartCoroutine(SetGame());
             StartCoroutine(Fade(3f));
         }
     }
-    
     private IEnumerator Fade(float waitTime = 0f)
     {
         yield return new WaitForSeconds(waitTime);

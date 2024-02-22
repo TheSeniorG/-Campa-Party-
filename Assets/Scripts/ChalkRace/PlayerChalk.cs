@@ -9,9 +9,11 @@ public class PlayerChalk : MonoBehaviour
     [SerializeField] private TextMeshProUGUI playerScore;
     [SerializeField] private float wearRate = 0.1f;
     [SerializeField] private float movSpeed = 5.0f;
+    [SerializeField] private int playerID;
 
     private float score = 0;
-    private bool playerAlive = true,gameOn;
+    private bool playerAlive = true;
+    private bool gameOn;
 
     private EmissionModule emissionModule;
     private bool emissionModuleInitialized = false;
@@ -104,7 +106,7 @@ public class PlayerChalk : MonoBehaviour
                 //DESACTIVAMOS EL RENDERER
                 mRenderer.enabled = false;
 
-                raceManager.EliminatePlayer();
+                raceManager.EliminatePlayer(playerID, ((int)score));
             }
         }
     }

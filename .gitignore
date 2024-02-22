@@ -80,3 +80,8 @@ Library/Search/transactions.db
 Library/SceneVisibilityState.asset
 *.pid
 Library/ArtifactDB
+Library/SourceAssetDB
+Library/ShaderCache/EditorEncounteredVariants
+*.json
+*.json
+Library/SourceAssetDB

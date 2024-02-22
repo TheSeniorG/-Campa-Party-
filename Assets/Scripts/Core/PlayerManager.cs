@@ -23,29 +23,43 @@ public class PlayerManager : MonoBehaviour
         players = new List<Player>();
     }
 
-    // OBTENER LA LONGITUD DE LA LISTA DE JUGADORES
-    public int GetListLength(){return players.Count;}
+    public int GetPlayerAmount(){return players.Count;}
 
-    // OBTENER UN JUGADOR POR ÍNDICE
     public Player GetPlayer(int index){return players[index];}
 
-    // AÑADIR UN NUEVO JUGADOR A LA LISTA
-    public void AddPlayer(Player newPlayer){players.Add(newPlayer);}
+    public void AddPlayer(Player newPlayer)
+    {
+        //COMPROBAMOS SI YA EXISTE EL JUGADOR
+        foreach (Player p in players) 
+        {
+            if(p.playerID == newPlayer.playerID)
+            {
+                //SI EL JUGADOR YA ESTABA REGISTRADO SOLO SE ACTUALIZA
+                UpdatePlayer(newPlayer);
+                return;
+            }
+        }
+        //SI NO EXISTE UN JUGADOR CON ESA ID SE REGISTRA UNO NUEVO
+        players.Add(newPlayer);
+        Debug.Log("NUEVO JUGADOR AÑADIDO");
+        PrintPlayerCharacteristics();
+    }
 
-    // ELIMINAR UN JUGADOR DE LA LISTA
     public void RemovePlayer(Player playerToRemove){players.Remove(playerToRemove);}
 
-    // ACTUALIZAR LA INFORMACIÓN DEL JUGADOR
-    public void UpdatePlayerInfo(int playerID, Color color, Sprite newSprite)
+    public void UpdatePlayer(Player newPlayer)
     {
-        if (players != null && playerID < players.Count)
+        if (players != null && newPlayer.playerID < players.Count)
         {
-            // CREAR Y REASIGNAR EL JUGADOR CON NUEVAS CARACTERÍSTICAS
-            Player updatedPlayer = new Player(playerID, color, newSprite);
-            players[playerID] = updatedPlayer;
-            PrintPlayerCharacteristics();
+            //REASIGNAR EL JUGADOR CON NUEVAS CARACTERÍSTICAS
+            players[newPlayer.playerID] = newPlayer;
         }
+        Debug.Log("JUGADOR ACTUALIZADO");
+        PrintPlayerCharacteristics();
     }
+
+    public void IncreasePlayerScore(int id, int newScore){players[id].score += newScore;}
+//----------------------------------------------------------------------------------------------
 
     // CLASE INTERNA PARA REPRESENTAR UN JUGADOR
     public class Player

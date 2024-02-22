@@ -20,7 +20,7 @@ public class LeaderboardManager : MonoBehaviour
             playerManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
 
             //OBTENEMOS LA LISTA DE JUGADORES
-            playerAmount = playerManager.GetListLength();
+            playerAmount = playerManager.GetPlayerAmount();
         }
         else { Debug.LogWarning("NO SE HA ENCONTRADO PLAYER MANAGER"); }
 
