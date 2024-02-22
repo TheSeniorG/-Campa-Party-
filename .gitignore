@@ -85,3 +85,4 @@ Library/ShaderCache/EditorEncounteredVariants
 *.json
 *.json
 Library/SourceAssetDB
+UserSettings/EditorUserSettings.asset

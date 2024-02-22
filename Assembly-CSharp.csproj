@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\ExpoQuiz\ExpoQuiz.cs" />
     <Compile Include="Assets\Scripts\Others\FreezePhysics.cs" />
     <Compile Include="Assets\Scripts\BasketPaper\PaperLauncher.cs" />
+    <Compile Include="Assets\Scripts\Menu\LobbyManager.cs" />
     <Compile Include="Assets\Scripts\Menu\MenuText.cs" />
     <Compile Include="Assets\Scripts\Others\OnDestroyEvent.cs" />
     <Compile Include="Assets\Scripts\BasketPaper\BasketPaperManager.cs" />
@@ -82,7 +83,6 @@
     <Compile Include="Assets\Scripts\MadTower\WinDetection.cs" />
     <Compile Include="Assets\Scripts\ChalkRace\PlayerChalk.cs" />
     <Compile Include="Assets\Scripts\ChalkRace\ChalkObstacle.cs" />
-    <Compile Include="Assets\LobbyManager.cs" />
     <Compile Include="Assets\Scripts\Menu\VolumeController.cs" />
     <Compile Include="Assets\Scripts\Menu\LobbyInputSender.cs" />
     <Compile Include="Assets\Scripts\MadTower\MoveBetweenPoints.cs" />
