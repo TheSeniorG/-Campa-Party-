@@ -48,8 +48,8 @@ public class BasketPaperManager : MonoBehaviour
             {
                 PlayerCard card = playersCards[i].GetComponent<PlayerCard>();
                 //ESTABLCEMOS SU DISEÑO
-                card.SetPlayerColor(playerManager.GetPlayer(i).playerColor);
-                card.SetPlayerIcon(playerManager.GetPlayer(i).playerIcon);
+                card.SetPlayerColor(playerManager.GetPlayer(i).PlayerColor);
+                card.SetPlayerIcon(playerManager.GetPlayer(i).PlayerIcon);
             }
         }
         Invoke("SetGame", 12.5f);

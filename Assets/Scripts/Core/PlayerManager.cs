@@ -32,7 +32,7 @@ public class PlayerManager : MonoBehaviour
         //COMPROBAMOS SI YA EXISTE EL JUGADOR
         foreach (Player p in players) 
         {
-            if(p.playerID == newPlayer.playerID)
+            if(p.PlayerID == newPlayer.PlayerID)
             {
                 //SI EL JUGADOR YA ESTABA REGISTRADO SOLO SE ACTUALIZA
                 UpdatePlayer(newPlayer);
@@ -49,40 +49,39 @@ public class PlayerManager : MonoBehaviour
 
     public void UpdatePlayer(Player newPlayer)
     {
-        if (players != null && newPlayer.playerID < players.Count)
+        if (players != null && newPlayer.PlayerID < players.Count)
         {
             //REASIGNAR EL JUGADOR CON NUEVAS CARACTERÍSTICAS
-            players[newPlayer.playerID] = newPlayer;
+            players[newPlayer.PlayerID] = newPlayer;
         }
         Debug.Log("JUGADOR ACTUALIZADO");
         PrintPlayerCharacteristics();
     }
 
-    public void IncreasePlayerScore(int id, int newScore){players[id].score += newScore;}
-//----------------------------------------------------------------------------------------------
+    public void IncreasePlayerScore(int id, int newScore){players[id].Score += newScore;}
+    //----------------------------------------------------------------------------------------------
 
     // CLASE INTERNA PARA REPRESENTAR UN JUGADOR
     public class Player
     {
-        public int playerID;
-        public Sprite playerIcon;
-        public Color playerColor = Color.white;
-        public int score = 0;
+        public int PlayerID { get; set; }
+        public int Score { get; set; } = 0;
+        public Sprite PlayerIcon { get; set; }
+        public Color PlayerColor { get; set; } = Color.white;
 
         public Player(int playerID, Color playerColor, Sprite playerIcon)
         {
-            this.playerID = playerID;
-            this.playerColor = playerColor;
-            this.playerIcon = playerIcon;
+            PlayerID = playerID;
+            PlayerColor = playerColor;
+            PlayerIcon = playerIcon;
         }
     }
-
     // TEST
     public void PrintPlayerCharacteristics()
     {
         foreach (Player player in players)
         {
-            Debug.Log($"PlayerID: {player.playerID}, IconName: {player.playerIcon.name}, Score: {player.score}, Color: {player.playerColor}");
+            Debug.Log($"PlayerID: {player.PlayerID}, IconName: {player.PlayerIcon.name}, Score: {player.Score}, Color: {player.PlayerColor}");
         }
     }
 }

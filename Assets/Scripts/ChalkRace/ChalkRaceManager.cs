@@ -40,8 +40,8 @@ public class ChalkRaceManager : MonoBehaviour
             {
                 PlayerCard card = playersCards[i].GetComponent<PlayerCard>();
                 //ESTABLCEMOS SU DISEÑO
-                card.SetPlayerColor(playerManager.GetPlayer(i).playerColor);
-                card.SetPlayerIcon(playerManager.GetPlayer(i).playerIcon);
+                card.SetPlayerColor(playerManager.GetPlayer(i).PlayerColor);
+                card.SetPlayerIcon(playerManager.GetPlayer(i).PlayerIcon);
             }
         }
 
@@ -57,7 +57,7 @@ public class ChalkRaceManager : MonoBehaviour
             if(playerManager != null)
             {
                 //CAMBIAR COLOR TIZA
-                playerChalks[i].SetChalkColor(playerManager.GetPlayer(i).playerColor);
+                playerChalks[i].SetChalkColor(playerManager.GetPlayer(i).PlayerColor);
             }
         }
 

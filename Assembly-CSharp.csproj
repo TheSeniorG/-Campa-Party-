@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\Others\CollisionParticles.cs" />
     <Compile Include="Assets\Scripts\Core\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\MadTower\WinDetection.cs" />
+    <Compile Include="Assets\Scripts\LeaderBoard\ReadyPlayer.cs" />
     <Compile Include="Assets\Scripts\ChalkRace\PlayerChalk.cs" />
     <Compile Include="Assets\Scripts\ChalkRace\ChalkObstacle.cs" />
     <Compile Include="Assets\Scripts\Menu\VolumeController.cs" />
