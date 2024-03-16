@@ -11,6 +11,7 @@ public class MadTowerManager : MonoBehaviour
     [SerializeField] private MoveBetweenPoints[] movBtwnPointsScript;
 
     private PlayerManager playerManager;
+
     [Header("TESTING ONLY")]
     [SerializeField][Range(1,4)] private int playerAmount = 1;
 
@@ -42,23 +43,26 @@ public class MadTowerManager : MonoBehaviour
             }
         }
     }
-    public void EndGame()
+    public void EndGame(int playerID)
     {
         //EFECTO DE FINALIZACION
         winFlash.SetActive(false);
         winFlash.SetActive(true);
+
+        if(playerManager != null){playerManager.IncreasePlayerScore(playerID, playerAmount); } //GUARDAMOS PUNTUACION DIRECTAMENTE CON SU ID
 
         playerAmount--;
 
         //CUNADO GANE EL PENULTIMO JUGADR ACABA LA PARTIDA
         if (playerAmount <= 1)
         {
-            //PARALIZAR TODOS LOS RB
+            //AÑADIR PUNTUACION DEL ULTIMO JUGADOR (SERA DE 1)
+            if (playerManager != null){playerManager.IncreasePlayerScore(playerID, playerAmount);}
+
+            //PARALIZAR TODOS LOS RB ACTIVOS
             Rigidbody[] allRBs = GameObject.FindObjectsOfType<Rigidbody>();
-            foreach (Rigidbody rb in allRBs)
-            {
-                if (rb != null) rb.isKinematic = true;
-            }
+            foreach (Rigidbody rb in allRBs){if (rb != null) rb.isKinematic = true;}
+
             //DESCTIVAR TODO LOS CONTROLES DE LOS JUGADORES
             for (int i = 0; i < playerAmount; i++)
             {
@@ -66,13 +70,11 @@ public class MadTowerManager : MonoBehaviour
                 playerController[i].enabled = false;
                 movBtwnPointsScript[i].enabled = false;
             }
+
             //CARGAMOS FADE A OTRA ESCENA
             Invoke("LoadLeaderboard", 5f);
         }
-        else 
-        {
-            Debug.Log("UN JUGADOR HA TERMINADO"); 
-        }
+        else {Debug.Log("UN JUGADOR HA TERMINADO"); }
     }
     //ACTIVA EL FADE QUE CARGA EL LEADERBOARD
     private void LoadLeaderboard(){fade.SetActive(true);}

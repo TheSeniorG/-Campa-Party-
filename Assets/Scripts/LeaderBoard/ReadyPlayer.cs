@@ -7,12 +7,12 @@ public class ReadyPlayer : MonoBehaviour
 {
     //SCRIPT UTILZIADO EN EL LEADERBOARD PARA INDICAR QUE TODOS LOS JUGAORES ESTAN LISTOS
     [SerializeField] private Image playerImage;
+    [SerializeField] private GameObject readyTxt;
     private LeaderboardManager manager;
 
     [SerializeField] private Image playerCheckboxImage;
     private void Start()
     {
-        playerImage = GetComponent<Image>();
         manager = GameObject.Find("LeaderboardManager").GetComponent<LeaderboardManager>();
     }
     private void Update()
@@ -21,9 +21,12 @@ public class ReadyPlayer : MonoBehaviour
         {
             //CAMBIAMOS EL HECKBOX DE LISTO AL COLOR DEL JUGADOR
             playerCheckboxImage.color = playerImage.color;
+            //TEXTO READY
+            readyTxt.SetActive(true);
+            //INDICAMOS AL MANAGER QUE EL JUADOR ESTA LISTO
             manager.PlayerReady();
 
-            //DESTRUIMOS ASI NO USA EL UPDATE
+            //DESTRUIMOS, ASI NO USA EL UPDATE
             Destroy(this);
         }
     }

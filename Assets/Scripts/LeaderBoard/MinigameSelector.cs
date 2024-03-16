@@ -15,25 +15,25 @@ public class MinigameSelector : MonoBehaviour
     private int minigameSelected = 0;
 
     //MINIJUEGOS (IR AÑADIENDO)
-    private Minigame chalkRace = new Minigame(0,"Chalk Race", "Race through an infinite chalkboard with your chalk, skillfully dodging obstacles to score as high as possible.","ChalkRace");
-    private Minigame basketPaper = new Minigame(1,"Basket Paper", "Aim, toss, and score by landing your paper balls in strategically placed baskets while avoiding obstacles that may alter your trajectory.","BasketPaper");
-    private Minigame madTower = new Minigame(2,"Mad Tower", "Test your skill and precision in this tower-building adventure where your goal is to stack objects and reach new heights.","MadTower");
+    private readonly Minigame chalkRace = new Minigame(0,"Chalk Race", "Race through an infinite chalkboard with your chalk, skillfully dodging obstacles to score as high as possible.","ChalkRace");
+    private readonly Minigame basketPaper = new Minigame(1,"Basket Paper", "Aim, toss, and score by landing your paper balls in strategically placed baskets while avoiding obstacles that may alter your trajectory.","BasketPaper");
+    private readonly Minigame madTower = new Minigame(2,"Mad Tower", "Test your skill and precision in this tower-building adventure where your goal is to stack objects and reach new heights.","MadTower");
 
 
     //DECLARAMOS ARRAY PERO NO LO USAMOS AUN
     private Minigame[] minigames;
-
+    private void Awake()
+    {
+        minigameDesc.text = "";
+        minigameName.text = "";
+    }
     void Start()
     {
-        Debug.LogWarning("RECORDATORIO: FALTA IMPLEMENTAR LA CLASE DE LOS MINIJUEGOS CON SU INFO");
-
         //ASSIGANMOS LOS VALORES AL ARRAY
         minigames = new Minigame[] {chalkRace,basketPaper,madTower};
 
-        startSpeed = Random.Range(50f, 200f);
-        previousTick = currentTick + 1;
-        minigameDesc.text = "";
-        minigameName.text = "";
+        startSpeed = Random.Range(50f, 300f);
+        previousTick = currentTick + 1f;
     }
 
     void Update()
@@ -43,21 +43,15 @@ public class MinigameSelector : MonoBehaviour
             //SUMAMOS EL VALOR DE VELOCIDAD QUE IRA DISMINUYENDO GRADUALMENTE
             currentTick += startSpeed;
 
-            if (currentTick >= previousTick){ChangeMinigame(minigameSelected);}
-            else { Invoke("LockMinigame", 0.75f); }
+            if (currentTick >= previousTick) { ChangeMinigame(); }
+            else { Invoke(nameof(LockMinigame), 0.75f); }
         }
     }
 
-    public void StartSelection(){startSelection = true;}
-
-    private void ChangeMinigame(int minigame)
+    private void ChangeMinigame()
     {
         //CANCELAMOS LAS LLAMADAS DE BLOQUEAR EL MINIJUEGO
         CancelInvoke();
-
-        //CAMBIAMOS TITULO I DESCRIPCION EN EL PANEL
-        minigameName.text = minigames[minigame].Name;
-        minigameDesc.text = minigames[minigame].Description;
 
         //DISMINUIMOS VELOCIDAD DE CAMBIO DE MINIJUEGO
         startSpeed *= .9f;
@@ -65,13 +59,21 @@ public class MinigameSelector : MonoBehaviour
 
         //SI LLEGA AL FINAL DEL INDICE DEL ARRAY VUELVE A 0
         minigameSelected = (minigameSelected + 1) % minigames.Length;
+
+        //Debug.Log("Minigame Index:" + minigameSelected + minigames[minigameSelected].LevelName);
+
+        //CAMBIAMOS TITULO I DESCRIPCION EN EL PANEL
+        minigameName.text = minigames[minigameSelected].Name;
+        minigameDesc.text = minigames[minigameSelected].Description;
     }
     private void LockMinigame()
     {
         //CANCELO INVOKES
         CancelInvoke();
+
         //ANULAMOS EL UPDATE
         startSelection = false;
+
         //EFFECTO SELECCION
         selectionLockedEffect.SetActive(true);
 

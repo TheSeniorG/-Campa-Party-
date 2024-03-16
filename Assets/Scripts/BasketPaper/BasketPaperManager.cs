@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.WSA;
@@ -9,6 +10,7 @@ public class BasketPaperManager : MonoBehaviour
     // VARIABLES SERIALIZADAS
     [SerializeField] private GameObject fade;
     [SerializeField] private GameObject[] players, playersCards;
+    [SerializeField] private Baskets[] baskets;
     [SerializeField] private PaperLauncher[] launcherScripts;
     [SerializeField] private Rotator[] rotatorScripts;
     [SerializeField] private int gameTime = 120;
@@ -18,6 +20,7 @@ public class BasketPaperManager : MonoBehaviour
     private bool startTimer = false;
     private float currentTime;
     private PlayerManager playerManager;
+    private Dictionary<int, int> playersScore = new Dictionary<int, int>();
 
     [Header("ESTO LUEGO SERA SOLO PRIVADO")]
     //DURANTE TESTEO LA HAGO SERIALIZABLE
@@ -58,7 +61,7 @@ public class BasketPaperManager : MonoBehaviour
     {
         //CAMBIAR ESTADO TIMER
         startTimer = !startTimer;
-        //ACTIVAR SCRITS JUGADORES
+        //CAMBAIR ESTADOS DE LOS JUGADORES
         for (int i = 0; i < playerAmount; i++)
         {
             launcherScripts[i].enabled = !launcherScripts[i].enabled;
@@ -78,13 +81,33 @@ public class BasketPaperManager : MonoBehaviour
             }
             else
             {
-                //PARAMOS LA CUENTA
-
-                startTimer = false;
                 SetGame();
-                Invoke("EndScene", 3f);
+                Invoke(nameof(Exit), 3f);
             }
         }
     }
-    private void EndScene() { fade.SetActive(true); Destroy(this); }
+    private void Exit()
+    {
+        //SOLO GUARDAMOS LA PUNTUACION SI HAY PLAYER MANAGER
+        if(playerManager != null)
+        {
+            //GUARDAR I ORDENAR PUNTUACIÓN DE LOS JUGADORES
+            for (int i = 0; i < playerAmount; i++) { playersScore.Add(i, baskets[i].GetScore()); }
+
+            //ORDENAR PUNTUACIONES
+            playersScore = playersScore.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+
+            //REASSIGNAR A CADA JUGADOR SU PUNTUACION BALANCEADA
+            for (int i = 0; i < playerAmount; i++)
+            {
+                //ESTABLECER NUEVAS PUNTUACIONES DEL 1 AL 4
+                playersScore[i] = playerAmount - i;
+                //ACTUALIZARLAS EN EL PLAYER MANAGER
+                int dictionaryKey = playersScore.ElementAt(i).Key;
+                playerManager.IncreasePlayerScore(dictionaryKey, playerAmount - i);
+            }
+        }
+
+        fade.SetActive(true); Destroy(this); 
+    }
 }

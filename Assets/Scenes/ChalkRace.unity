@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 4e154bf235e41704bbd6bbc6fd6c63f6, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.43975514, g: 0.48817998, b: 0.5683994, a: 1}
+  m_IndirectSpecularColor: {r: 0.6251427, g: 0.6954815, b: 0.7891679, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -309,6 +309,7 @@ MonoBehaviour:
   playerScore: {fileID: 713661547}
   wearRate: 0.01
   movSpeed: 2
+  playerID: 0
 --- !u!1001 &164709304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -549,6 +550,7 @@ MonoBehaviour:
   playerScore: {fileID: 405734810}
   wearRate: 0.01
   movSpeed: 2
+  playerID: 0
 --- !u!1 &355380683
 GameObject:
   m_ObjectHideFlags: 0
@@ -5743,6 +5745,7 @@ MonoBehaviour:
   playerScore: {fileID: 1990253561}
   wearRate: 0.01
   movSpeed: 2
+  playerID: 0
 --- !u!1 &517756599
 GameObject:
   m_ObjectHideFlags: 0
@@ -10787,6 +10790,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
+  - component: {fileID: 705507996}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -10871,6 +10875,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 517756600}
   m_LocalEulerAnglesHint: {x: 70, y: 0, z: 0}
+--- !u!114 &705507996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705507993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &713661545
 GameObject:
   m_ObjectHideFlags: 0
@@ -11025,6 +11052,7 @@ MonoBehaviour:
   playerScore: {fileID: 2080279}
   wearRate: 0.01
   movSpeed: 2
+  playerID: 0
 --- !u!4 &726243167 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9031728394043765553, guid: 8ce94e34812f78a48a531fd38df96554, type: 3}
@@ -11173,6 +11201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeDuration: 4
   fadeIn: 0
+  alternateFade: 1
   activateObjects: 1
   gameObjectsToActivate:
   - {fileID: 1937064006}
@@ -16516,6 +16545,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChalkboardRace
       objectReference: {fileID: 0}
+    - target: {fileID: 2303764772279417567, guid: af8f9cf12a0507543adb7c9b92a32a0b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8ff297c800ad164499722531326adf1e, type: 2}
     - target: {fileID: 5180520297175863051, guid: af8f9cf12a0507543adb7c9b92a32a0b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -21490,7 +21523,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a924e9ae5150da449b6fb3e18d2a7c6a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -41735,7 +41768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 798412952399140498, guid: 40d46f6a118da7a448795391994cf68a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 798412952399140498, guid: 40d46f6a118da7a448795391994cf68a, type: 3}
       propertyPath: m_AnchorMin.x
@@ -41743,7 +41776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 798412952399140498, guid: 40d46f6a118da7a448795391994cf68a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 798412952399140498, guid: 40d46f6a118da7a448795391994cf68a, type: 3}
       propertyPath: m_SizeDelta.x
@@ -41783,11 +41816,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 798412952399140498, guid: 40d46f6a118da7a448795391994cf68a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 960
       objectReference: {fileID: 0}
     - target: {fileID: 798412952399140498, guid: 40d46f6a118da7a448795391994cf68a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -1020
       objectReference: {fileID: 0}
     - target: {fileID: 798412952399140498, guid: 40d46f6a118da7a448795391994cf68a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -41807,7 +41840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4025358117963805754, guid: 40d46f6a118da7a448795391994cf68a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -41948,7 +41981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 628683808204713529, guid: 8ce94e34812f78a48a531fd38df96554, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 628683808204713529, guid: 8ce94e34812f78a48a531fd38df96554, type: 3}
       propertyPath: m_TagString

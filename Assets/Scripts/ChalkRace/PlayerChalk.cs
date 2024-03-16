@@ -53,6 +53,7 @@ public class PlayerChalk : MonoBehaviour
         var mainModule = chalkPaint.main;
         mainModule.startColor = playerColor;
     }
+
     void Update()
     {
         if (gameOn && playerAlive)

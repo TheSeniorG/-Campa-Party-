@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BasketPaper.unity
     guid: 45fc207936e12dc4b8a8eabe6e090a69
+  - enabled: 1
+    path: Assets/Scenes/MadTower.unity
+    guid: 037ee398435233744804c3d21e14cdb6
   m_configObjects: {}

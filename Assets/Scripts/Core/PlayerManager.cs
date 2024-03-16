@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -58,7 +59,15 @@ public class PlayerManager : MonoBehaviour
         PrintPlayerCharacteristics();
     }
 
-    public void IncreasePlayerScore(int id, int newScore){players[id].Score += newScore;}
+    public void IncreasePlayerScore(int id, int newScore)
+    {
+        //GUARDAMOS LA PUNTUACION ANTIGUA I LA OBTENIDA PARA EL LEADERBOARD
+        players[id].OldScore = players[id].Score;
+        players[id].ScoreObatined = newScore;
+
+        players[id].Score += newScore;
+    }
+
     //----------------------------------------------------------------------------------------------
 
     // CLASE INTERNA PARA REPRESENTAR UN JUGADOR
@@ -66,6 +75,9 @@ public class PlayerManager : MonoBehaviour
     {
         public int PlayerID { get; set; }
         public int Score { get; set; } = 0;
+        public int OldScore { get; set; } = 0;
+        public int ScoreObatined { get; set; } = 0;
+
         public Sprite PlayerIcon { get; set; }
         public Color PlayerColor { get; set; } = Color.white;
 

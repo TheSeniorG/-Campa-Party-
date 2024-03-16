@@ -3,6 +3,7 @@ using UnityEngine;
 public class WinDetection : MonoBehaviour
 {
     [SerializeField] private GameObject playerController;
+    [SerializeField] private int playerID;
 
     private GameObject playerObject;
     private MadTowerManager madTowerManager;
@@ -45,7 +46,7 @@ public class WinDetection : MonoBehaviour
     private void EndGame()
     {
         //LE DECIMOS AL GAME MANAGER QUE ESTE JUGADOR HA ACABADO
-        madTowerManager.EndGame();
+        madTowerManager.EndGame(playerID);
 
         //DESTRUIMOS ESTE JUGADOR
         Destroy(playerController);
