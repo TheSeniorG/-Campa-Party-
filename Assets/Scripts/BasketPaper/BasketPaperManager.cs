@@ -14,6 +14,7 @@ public class BasketPaperManager : MonoBehaviour
     [SerializeField] private Rotator[] rotatorScripts;
     [SerializeField] private int gameTime = 120;
     [SerializeField] private TextMeshProUGUI timeText;
+    [SerializeField] private AudioClip whistle_SFX;
 
     //VARIABLES PRIVADAS
     private bool startTimer = false;
@@ -21,7 +22,13 @@ public class BasketPaperManager : MonoBehaviour
     private PlayerManager playerManager;
     private DatabaseAccess databaseAccess;
     private Dictionary<int, int> playersScores = new();
+    private AudioSource audioSource;
     private int playerAmount = 1;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void Start()
     {
@@ -62,6 +69,10 @@ public class BasketPaperManager : MonoBehaviour
     {
         //CAMBIAR ESTADO TIMER
         startTimer = !startTimer;
+
+        //SFX
+        audioSource.Play();
+
         //CAMBAIAR ESTADOS DE LOS JUGADORES
         for (int i = 0; i < playerAmount; i++)
         {
@@ -108,7 +119,6 @@ public class BasketPaperManager : MonoBehaviour
                 int dictionaryKey = playersScores.ElementAt(i).Key;
                 playerManager.IncreasePlayerScore(dictionaryKey, playerAmount - i);
             }
-
             //GUARDAR MINIJUEGO
             databaseAccess.SetMiniGameEnd(playersScores);
         }

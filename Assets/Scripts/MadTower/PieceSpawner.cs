@@ -11,9 +11,12 @@ public class PieceSpawner : MonoBehaviour
     private int deviceID;
     private GameObject newPiece;
     private bool canDrop;
-
+    private AudioSource audioSource;
     public void AssignDeviceID(int assignedId) { deviceID = assignedId; }
-
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     private void Start()
     {
         SpawnNextPiece();
@@ -29,7 +32,7 @@ public class PieceSpawner : MonoBehaviour
     }
     public void DropPiece(InputAction.CallbackContext callbackContext)
     {
-        if (callbackContext.control.device.deviceId.Equals(deviceID))
+        if (callbackContext.started &&  callbackContext.control.device.deviceId.Equals(deviceID))
         {
             if (canDrop)
             {
@@ -44,6 +47,8 @@ public class PieceSpawner : MonoBehaviour
                 newPiece.GetComponent<FreezePhysics>().StartFreezeTime();
                 canDrop = false;
 
+                //SFX
+                audioSource.Play();
 
                 Invoke(nameof(SpawnNextPiece), spawnTime);
             }

@@ -15,6 +15,7 @@ public class GetPlayerColor : MonoBehaviour
     private Image myImage;
     private SpriteRenderer mySpriteRenderer;
     private PlayerManager playerManager;
+
     private Color myColor;
 
     private void Start()

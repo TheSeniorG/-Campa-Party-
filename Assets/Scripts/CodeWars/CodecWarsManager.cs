@@ -19,7 +19,7 @@ public class CodecWarsManager : MonoBehaviour
     private bool startTimer = false;
     private float currentTime;
     private int playerAmount = 1;
-    private Dictionary<int, int> playersScores = new();
+    private Dictionary<int, int> playersScores = new Dictionary<int, int>();
     private PlayerManager playerManager;
     private DatabaseAccess databaseAccess;
 
@@ -35,7 +35,7 @@ public class CodecWarsManager : MonoBehaviour
             //OBTENEMOS LA LISTA DE JUGADORES
             playerAmount = playerManager.GetPlayerAmount();
             //BASE DE DATOS
-            databaseAccess = GetComponent<DatabaseAccess>(); 
+            databaseAccess = playerManager.GetComponent<DatabaseAccess>(); 
         }
         else { Debug.LogWarning("NO SE HA ENCONTRADO PLAYER MANAGER"); }
 

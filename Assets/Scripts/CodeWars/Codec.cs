@@ -11,7 +11,7 @@ public class Codec : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private GameObject flashEffect;
 
-    private int codecLength;
+    private int codecLength = 5;
     private int deviceID;
     private int score = 0;
     private int currentIndex = 0;
@@ -36,7 +36,6 @@ public class Codec : MonoBehaviour
         ResetAnswer();
 
         //GENERAR CODIGO
-        codecLength = Random.Range(3, 6);
         codecCode = "";
 
         //ALEATORIZAR CODIGO
@@ -113,7 +112,7 @@ public class Codec : MonoBehaviour
     {
         if (canWrite)
         {
-            if (callbackContext.started )
+            if (callbackContext.started && callbackContext.control.device.deviceId.Equals(deviceID))
             {
                 //COMPROBAR INPUT REALIZADO
                 Vector2 value = callbackContext.ReadValue<Vector2>();

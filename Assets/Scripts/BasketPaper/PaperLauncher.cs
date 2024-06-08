@@ -14,7 +14,12 @@ public class PaperLauncher : MonoBehaviour
     private Rigidbody paperBallRB;
     private bool readyToShot;
     private float cooldown;
+    private AudioSource audioSource;
 
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     public void AssignDeviceID(int assignedID) { deviceID = assignedID; }
 
     private void Update()
@@ -47,6 +52,10 @@ public class PaperLauncher : MonoBehaviour
                 paperBallRB.AddForce(transform.forward * throwForce); // LANZAMOS EL OBJETO
                 cooldown = cooldownTime; // RESETEAMOS EL COOLDOWN
                 readyToShot = false;
+
+                //SFX
+                audioSource.Play();
+
                 //DETRUIMOS PARA QUE NO SE ACUMULEN
                 Destroy(paperBall, 3f);
             }

@@ -76,14 +76,15 @@ public class LobbyManager : MonoBehaviour
         {
             //OBTENEMOS EL ID DEL CONTROLADOR A UNIRSE
             int deviceID = callbackContext.control.device.deviceId;
+
             if (connectedPlayers < MAX_PLAYERS && !devicesRegistered.Contains(deviceID))
             {
                 //REGISTRAMOS EL CONTROLADOR DEL JUGADOR QUE SE UNE
                 devicesRegistered.Add(deviceID);
 
-                //CREAMOS NA TARJETA DE JUGADOR I LE ASIGNAMOS UN ID
+                //CREAMOS NA TARJETA DE JUGADOR I LE ASIGNAMOS UN ID DE JUGADOR I CONTROLADOR REGISTRADO
                 GameObject newPlayerCard = Instantiate(playerCard, playersCardLayout);
-                newPlayerCard.GetComponent<PlayerCardConfig>().SetupPlayer(connectedPlayers, callbackContext.control.device);
+                newPlayerCard.GetComponent<PlayerCardConfig>().SetupPlayer(connectedPlayers, callbackContext.control.device.deviceId);
 
                 //REGISTRAMOS EL CONTROADOR AÑADIDO
                 playersInputRegistered.Add(newPlayerCard.GetComponent<PlayerInput>());
@@ -99,9 +100,11 @@ public class LobbyManager : MonoBehaviour
     {
         foreach(PlayerInput pInpt in playersInputRegistered) { pInpt.enabled = false;}
 
+
         //BASE DE DATOS
         //REGISTRAMOS EN LA BASE DE DATOS EL INICIO DE LA PARTIDA
         databaseAccess.SetStartGame();
+
         for(int i= 0; i< connectedPlayers; i++)
         {
             databaseAccess.AddPlayer(playerManagerScript.GetPlayer(i).PlayerName);

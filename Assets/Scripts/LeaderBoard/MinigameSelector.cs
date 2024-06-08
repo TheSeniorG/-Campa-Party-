@@ -1,14 +1,17 @@
-using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MinigameSelector : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI minigameName, minigameDesc;
-    [SerializeField] private TextMeshProUGUI[] controlsDescripions;
+    [SerializeField] private Image minigameThumbnail;
     [SerializeField] private GameObject fade, selectionLockedEffect;
     [SerializeField] private UIFadeController fadeController;
+
+    [SerializeField] private TextMeshProUGUI[] controlsDescripions;
     [SerializeField] private ReadyPlayer[] readyPlayerScript;
+    [SerializeField] private Sprite[] minigamesThumbnails;
 
     [Header("SONIDO")]
     private AudioSource audioSource;
@@ -41,8 +44,13 @@ public class MinigameSelector : MonoBehaviour
     }
     void Start()
     {
+        //ASSIGNAR MINIATURAS DE MINIJUEGOS
+        //chalkRace.minigameThumbnail = minigamesThumbnails[0];
+        basketPaper.minigameThumbnail = minigamesThumbnails[0];
+        madTower.minigameThumbnail = minigamesThumbnails[1];
+        codeWars.minigameThumbnail = minigamesThumbnails[2];
         //ASSIGANMOS LOS VALORES AL ARRAY
-        minigames = new Minigame[] {basketPaper, madTower, codeWars};
+        minigames = new Minigame[] {basketPaper,madTower,codeWars};
         //ALEATORIZAR VELOCIDAD DE SELECCION
         startSpeed = Random.Range(50f, 500f);
         previousTick = currentTick + 1f;
@@ -77,6 +85,7 @@ public class MinigameSelector : MonoBehaviour
         //CAMBIAMOS TITULO I DESCRIPCION EN EL PANEL
         minigameName.text = minigames[minigameSelected].Name;
         minigameDesc.text = minigames[minigameSelected].Description;
+        minigameThumbnail.sprite = minigamesThumbnails[minigameSelected];
 
         //CONTROLES DE LOS MINIJUEGOS
         controlsDescripions[0].text = minigames[minigameSelected].Control1Input; 
@@ -120,6 +129,8 @@ public class MinigameSelector : MonoBehaviour
         public string Control1Input { get; set; }
         public string Control2Input { get; set; }
         public string Control3Input { get; set; }
+
+        public Sprite minigameThumbnail { get; set; } = null;
 
         public Minigame(int minigameImageID, string name, string description, string levelName,
             string newInput1 = "", string newInput2 = "", string newInput3 = "")

@@ -22,7 +22,6 @@ public class PlayerCardConfig : MonoBehaviour
     [SerializeField] private AudioClip navSFX;
 
     private int playerID;
-    private InputDevice assignedDevice;
     private int deviceID;
     private int actualColor = 0, actualIcon = 0, currentOption = 0;
 
@@ -64,16 +63,13 @@ public class PlayerCardConfig : MonoBehaviour
 
         //NOMBRE DEL PLAYER
         playerName.text = newPlayer.PlayerName;
-
-        //ASSIGNAR CONTROLADOR
-        playerInput.SwitchCurrentControlScheme(assignedDevice);
     }
 
-    public void SetupPlayer(int assignedID, InputDevice designedDevice)
+    public void SetupPlayer(int assignedID, int designedDeviceID)
     {
         //ASSIGNAR ID DE CONEXION
         playerID = assignedID;
-        assignedDevice = designedDevice;
+        deviceID = designedDeviceID;
     }
 
     private void ChangeColor(int colorIndex)
@@ -119,7 +115,7 @@ public class PlayerCardConfig : MonoBehaviour
 
     public void MoveSelector(InputAction.CallbackContext callbackContext)
     {
-        if (callbackContext.started)
+        if (callbackContext.started && callbackContext.control.device.deviceId.Equals(deviceID))
         {
             //Debug.Log("MUEVE");
             if (!playerLocked)
@@ -142,7 +138,7 @@ public class PlayerCardConfig : MonoBehaviour
 
     public void ChooseOption(InputAction.CallbackContext callbackContext)
     {
-        if (callbackContext.started)
+        if (callbackContext.started && callbackContext.control.device.deviceId.Equals(deviceID))
         {
             //OBTENER FLOAT
             int selectValue = (int)playerInput.actions["UI/MenuNavHor"].ReadValue<float>();

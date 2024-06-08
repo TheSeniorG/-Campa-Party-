@@ -6,6 +6,7 @@ using System.Collections.Generic;
 
 public class DatabaseAccess : MonoBehaviour
 {
+
     readonly MongoClient client = new MongoClient("mongodb+srv://rpadilladam:ra329656XD@cluster0.7eznjbv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
     IMongoDatabase database;
     IMongoCollection<BsonDocument> collection;
@@ -22,6 +23,7 @@ public class DatabaseAccess : MonoBehaviour
     //INICIO DE PARTIDA
     public void SetStartGame()
     {
+        /*
         // INSERTAR UN NUEVO DOCUMENTO PARA LA PARTIDA
         var document = new BsonDocument
         {
@@ -34,11 +36,13 @@ public class DatabaseAccess : MonoBehaviour
 
         // GUARDAR EL ID DE LA PARTIDA
         id_game = document["_id"].AsObjectId;
+        */
     }
 
     //AÑADIR JUGADOR A LA PARTIDA
     public void AddPlayer(string playerName)
     {
+        /*
         // CREAR LA INFORMACIÓN DEL JUGADOR
         var player = new BsonDocument
         {
@@ -52,11 +56,13 @@ public class DatabaseAccess : MonoBehaviour
         // ACTUALIZAR LA CLASIFICACIÓN CON EL NUEVO JUGADOR
         var update = Builders<BsonDocument>.Update.Push("clasificacion.jugador", player);
         collection.UpdateOne(filter, update);
+        */
     }
 
     // AÑADIR INICIO DE UN MINIJUEGO
     public void SetMinigameStart(string minigameName)
     {
+        /*
         // GENERAR UNA ID ÚNICA PARA EL MINIJUEGO
         id_minigame = ObjectId.GenerateNewId();
 
@@ -75,11 +81,13 @@ public class DatabaseAccess : MonoBehaviour
         // AÑADIR EL MINIJUEGO A LA PARTIDA
         var update = Builders<BsonDocument>.Update.Push("minijuegos", minijuego);
         collection.UpdateOne(filter, update);
+        */
     }
 
     //METODO PARA AÑADIR EL FINAL DE UN MINIJUEGO I ACTUALIZAR LAS PUNTUACIONES TOTALES
     public void SetMiniGameEnd(Dictionary<int, int> scores)
     {
+        /*
         // FILTRAR POR LA PARTIDA Y EL MINIJUEGO ACTUAL
         var minigameFilter = Builders<BsonDocument>.Filter.And(
             Builders<BsonDocument>.Filter.Eq("_id", id_game),
@@ -112,11 +120,13 @@ public class DatabaseAccess : MonoBehaviour
             // EJECUTAR LA ACTUALIZACIÓN
             collection.UpdateOne(minigameFilter, update, options);
         }
+        */
     }
 
     //AGREGAR FECHA DE FINALIZACON DE LA PARTIDA
     public void SetEndGame()
     {
+        /*
         // FILTRAR LA PARTIDA POR ID
         var filter = Builders<BsonDocument>.Filter.Eq("_id", id_game);
 
@@ -125,5 +135,6 @@ public class DatabaseAccess : MonoBehaviour
 
         // ACTUALIZAR LA COLECCIÓN PARA ESTABLECER LA FECHA FINAL DE LA PARTIDA
         collection.UpdateOne(filter, update);
+    */
     }
 }

@@ -11,14 +11,15 @@ public class MadTowerManager : MonoBehaviour
     [SerializeField] private PieceSpawner[] playerController;
     [SerializeField] private MoveBetweenPoints[] movBtwnPointsScript;
 
-    private Dictionary<int, int> playersScores;
+    private Dictionary<int, int> playersScores = new Dictionary<int, int>();
     private PlayerManager playerManager;
     private DatabaseAccess databaseAccess;
+    private AudioSource audioSource;
     private int playerAmount = 1;
 
+    private void Awake(){audioSource = GetComponent<AudioSource>();}
     private void Start()
     {
-
         //COMPROBAR QUE EXISTA PLAYER MANAGER
         if (GameObject.Find("PlayerManager"))
         {
@@ -87,6 +88,9 @@ public class MadTowerManager : MonoBehaviour
 
             //CARGAMOS FADE A OTRA ESCENA EN 3 SEGUNDOS
             Invoke(nameof(LoadLeaderboard), 3f);
+
+            //SFX
+            audioSource.Play();
         }
         else {Debug.Log("UN JUGADOR HA TERMINADO"); }
     }
